@@ -12,6 +12,6 @@ namespace UrenregistratieService
     public interface IUrenregistratieservice
     {
         [OperationContract]
-        void DoWork();
+        bool Login(string gebruikersnaam, string wachtwoord);
     }
 }

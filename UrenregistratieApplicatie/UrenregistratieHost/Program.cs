@@ -12,6 +12,12 @@ namespace UrenregistratieHost
     {
         static void Main(string[] args)
         {
+            using (ServiceHost host = new ServiceHost(typeof(Urenregistratieservice)))
+            {
+                host.Open();
+                Console.WriteLine("Service wordt gehost");
+                Console.ReadKey();
+            }
         }
     }
 }

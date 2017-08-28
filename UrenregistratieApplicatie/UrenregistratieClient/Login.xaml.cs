@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UrenregistratieClient.UrenregistratieService;
 
 namespace UrenregistratieClient
 {
@@ -23,6 +24,19 @@ namespace UrenregistratieClient
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
+            {
+                bool r = uProxy.Login(GebruikersnaamBox.Text, WachtwoordBox.Text);
+            }
         }
     }
 }

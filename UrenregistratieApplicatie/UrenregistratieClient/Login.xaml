@@ -1,0 +1,21 @@
+﻿<Window x:Class="UrenregistratieClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UrenregistratieClient"
+        mc:Ignorable="d"
+        Title="Login" Height="278.431" Width="324.019">
+    <Grid Margin="0,0,2,0">
+
+        <TextBox x:Name="GebruikersnaamBox" HorizontalAlignment="Left" Height="23" Margin="140,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="WachtwoordBox" HorizontalAlignment="Left" Height="23" Margin="140,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="98" Height="26"/>
+        <Label Content="Wachtwoord:" HorizontalAlignment="Left" Margin="24,107,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="98" Height="26"/>
+        <TextBlock HorizontalAlignment="Left" Margin="24,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="259" Height="16">
+            <Hyperlink NavigateUri="Reviews.xaml">Nog geen account? Registreer hier! </Hyperlink>
+        </TextBlock>
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="185,146,0,0" VerticalAlignment="Top" Width="75" Click="Login_Click"/>
+
+    </Grid>
+</Window>
