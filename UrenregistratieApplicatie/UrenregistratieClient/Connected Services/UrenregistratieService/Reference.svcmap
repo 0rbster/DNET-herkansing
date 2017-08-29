@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bc41d346-cb34-4414-b97c-4220988b8a3e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1fc9991-0b67-4600-8e67-783d0cb5e326" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="f161931a-a699-42da-87bc-261fd7d4e917" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="cd7cfb38-a1cd-4884-acf1-6ad1802c1d47" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?disco" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="cded2b3f-47e9-49d0-a30b-f6dd8aeb1618" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd1" />
-    <MetadataFile FileName="Urenregistratieservice.wsdl" MetadataType="Wsdl" ID="d54d1b82-873a-40c0-a7ce-50527e829d98" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="c14f6b17-26f5-4f08-9e30-441ace63b8fb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="7680aad0-af35-4f31-ac97-4d688f3537b8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="a5a72c35-9805-46d5-8e82-8e87a6f1e9aa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd1" />
+    <MetadataFile FileName="Urenregistratieservice.wsdl" MetadataType="Wsdl" ID="c61bda1d-2f48-4914-a3aa-69b2ff445a29" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

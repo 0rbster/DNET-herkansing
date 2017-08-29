@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UrenregistratieDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ProjectSet">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaakSet">
+          <Key>
+            <PropertyRef Name="TaakId" />
+          </Key>
+          <Property Name="TaakId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Uren" Type="int" Nullable="false" />
+          <Property Name="UserUserId" Type="int" Nullable="false" />
+          <Property Name="ProjectProjectId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserSet">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gebruikersnaam" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Wachtwoord" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProjectProjectId" Type="int" />
+        </EntityType>
+        <Association Name="FK_ProjectTaak">
+          <End Role="ProjectSet" Type="Self.ProjectSet" Multiplicity="1" />
+          <End Role="TaakSet" Type="Self.TaakSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectSet">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="TaakSet">
+              <PropertyRef Name="ProjectProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectUser">
+          <End Role="ProjectSet" Type="Self.ProjectSet" Multiplicity="0..1" />
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectSet">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="UserSet">
+              <PropertyRef Name="ProjectProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTaken">
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
+          <End Role="TaakSet" Type="Self.TaakSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserSet">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TaakSet">
+              <PropertyRef Name="UserUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UrenregistratieDBModelStoreContainer">
+          <EntitySet Name="ProjectSet" EntityType="Self.ProjectSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaakSet" EntityType="Self.TaakSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ProjectTaak" Association="Self.FK_ProjectTaak">
+            <End Role="ProjectSet" EntitySet="ProjectSet" />
+            <End Role="TaakSet" EntitySet="TaakSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectUser" Association="Self.FK_ProjectUser">
+            <End Role="ProjectSet" EntitySet="ProjectSet" />
+            <End Role="UserSet" EntitySet="UserSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTaken" Association="Self.FK_UserTaken">
+            <End Role="UserSet" EntitySet="UserSet" />
+            <End Role="TaakSet" EntitySet="TaakSet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UrenregistratieDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ProjectSet">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TaakSet" Relationship="Self.FK_ProjectTaak" FromRole="ProjectSet" ToRole="TaakSet" />
+          <NavigationProperty Name="UserSet" Relationship="Self.FK_ProjectUser" FromRole="ProjectSet" ToRole="UserSet" />
+        </EntityType>
+        <EntityType Name="TaakSet">
+          <Key>
+            <PropertyRef Name="TaakId" />
+          </Key>
+          <Property Name="TaakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Uren" Type="Int32" Nullable="false" />
+          <Property Name="UserUserId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProjectSet" Relationship="Self.FK_ProjectTaak" FromRole="TaakSet" ToRole="ProjectSet" />
+          <NavigationProperty Name="UserSet" Relationship="Self.FK_UserTaken" FromRole="TaakSet" ToRole="UserSet" />
+        </EntityType>
+        <EntityType Name="UserSet">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gebruikersnaam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Wachtwoord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProjectProjectId" Type="Int32" />
+          <NavigationProperty Name="ProjectSet" Relationship="Self.FK_ProjectUser" FromRole="UserSet" ToRole="ProjectSet" />
+          <NavigationProperty Name="TaakSet" Relationship="Self.FK_UserTaken" FromRole="UserSet" ToRole="TaakSet" />
+        </EntityType>
+        <Association Name="FK_ProjectTaak">
+          <End Role="ProjectSet" Type="Self.ProjectSet" Multiplicity="1" />
+          <End Role="TaakSet" Type="Self.TaakSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectSet">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="TaakSet">
+              <PropertyRef Name="ProjectProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectUser">
+          <End Role="ProjectSet" Type="Self.ProjectSet" Multiplicity="0..1" />
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectSet">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="UserSet">
+              <PropertyRef Name="ProjectProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTaken">
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
+          <End Role="TaakSet" Type="Self.TaakSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserSet">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TaakSet">
+              <PropertyRef Name="UserUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UrenregistratieDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProjectSet" EntityType="Self.ProjectSet" />
+          <EntitySet Name="TaakSet" EntityType="Self.TaakSet" />
+          <EntitySet Name="UserSet" EntityType="Self.UserSet" />
+          <AssociationSet Name="FK_ProjectTaak" Association="Self.FK_ProjectTaak">
+            <End Role="ProjectSet" EntitySet="ProjectSet" />
+            <End Role="TaakSet" EntitySet="TaakSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectUser" Association="Self.FK_ProjectUser">
+            <End Role="ProjectSet" EntitySet="ProjectSet" />
+            <End Role="UserSet" EntitySet="UserSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTaken" Association="Self.FK_UserTaken">
+            <End Role="UserSet" EntitySet="UserSet" />
+            <End Role="TaakSet" EntitySet="TaakSet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UrenregistratieDBModelStoreContainer" CdmEntityContainer="UrenregistratieDBEntities">
+          <EntitySetMapping Name="ProjectSet">
+            <EntityTypeMapping TypeName="UrenregistratieDBModel.ProjectSet">
+              <MappingFragment StoreEntitySet="ProjectSet">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Naam" ColumnName="Naam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaakSet">
+            <EntityTypeMapping TypeName="UrenregistratieDBModel.TaakSet">
+              <MappingFragment StoreEntitySet="TaakSet">
+                <ScalarProperty Name="TaakId" ColumnName="TaakId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Uren" ColumnName="Uren" />
+                <ScalarProperty Name="UserUserId" ColumnName="UserUserId" />
+                <ScalarProperty Name="ProjectProjectId" ColumnName="ProjectProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSet">
+            <EntityTypeMapping TypeName="UrenregistratieDBModel.UserSet">
+              <MappingFragment StoreEntitySet="UserSet">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Gebruikersnaam" ColumnName="Gebruikersnaam" />
+                <ScalarProperty Name="Wachtwoord" ColumnName="Wachtwoord" />
+                <ScalarProperty Name="ProjectProjectId" ColumnName="ProjectProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

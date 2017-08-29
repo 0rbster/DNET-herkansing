@@ -47,7 +47,7 @@ GO
 CREATE TABLE [dbo].[TaakSet] (
     [TaakId] int IDENTITY(1,1) NOT NULL,
     [Type] nvarchar(max)  NOT NULL,
-    [Uren] time  NOT NULL,
+    [Uren] int  NOT NULL,
     [UserUserId] int  NOT NULL,
     [ProjectProjectId] int  NOT NULL
 );

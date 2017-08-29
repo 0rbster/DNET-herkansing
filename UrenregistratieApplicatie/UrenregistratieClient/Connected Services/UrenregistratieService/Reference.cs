@@ -20,6 +20,12 @@ namespace UrenregistratieClient.UrenregistratieService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/Login", ReplyAction="http://tempuri.org/IUrenregistratieservice/LoginResponse")]
         System.Threading.Tasks.Task<bool> LoginAsync(string gebruikersnaam, string wachtwoord);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/Registreer", ReplyAction="http://tempuri.org/IUrenregistratieservice/RegistreerResponse")]
+        bool Registreer(string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/Registreer", ReplyAction="http://tempuri.org/IUrenregistratieservice/RegistreerResponse")]
+        System.Threading.Tasks.Task<bool> RegistreerAsync(string gebruikersnaam);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace UrenregistratieClient.UrenregistratieService {
         
         public System.Threading.Tasks.Task<bool> LoginAsync(string gebruikersnaam, string wachtwoord) {
             return base.Channel.LoginAsync(gebruikersnaam, wachtwoord);
+        }
+        
+        public bool Registreer(string gebruikersnaam) {
+            return base.Channel.Registreer(gebruikersnaam);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistreerAsync(string gebruikersnaam) {
+            return base.Channel.RegistreerAsync(gebruikersnaam);
         }
     }
 }

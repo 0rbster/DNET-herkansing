@@ -13,10 +13,10 @@ namespace UrenregistratieService
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBmodelContainer : DbContext
+    public partial class UrenregistratieDBEntities : DbContext
     {
-        public DBmodelContainer()
-            : base("name=DBmodelContainer")
+        public UrenregistratieDBEntities()
+            : base("name=UrenregistratieDBEntities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace UrenregistratieService
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> UserSet { get; set; }
-        public virtual DbSet<Project> ProjectSet { get; set; }
-        public virtual DbSet<Taak> TaakSet { get; set; }
+        public virtual DbSet<ProjectSet> ProjectSet { get; set; }
+        public virtual DbSet<TaakSet> TaakSet { get; set; }
+        public virtual DbSet<UserSet> UserSet { get; set; }
     }
 }

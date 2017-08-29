@@ -12,16 +12,35 @@
   <wsdl:message name="IUrenregistratieservice_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_Registreer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Registreer" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_Registreer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistreerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUrenregistratieservice">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/Login" message="tns:IUrenregistratieservice_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/LoginResponse" message="tns:IUrenregistratieservice_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Registreer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/Registreer" message="tns:IUrenregistratieservice_Registreer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/RegistreerResponse" message="tns:IUrenregistratieservice_Registreer_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUrenregistratieservice" type="tns:IUrenregistratieservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registreer">
+      <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/Registreer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

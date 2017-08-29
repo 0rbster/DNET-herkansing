@@ -30,12 +30,28 @@ namespace UrenregistratieClient
         {
         
         }
+    
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            Registreren r = new Registreren();
+            r.Show();
+            this.Close();
+        }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
             {
-                bool r = uProxy.Login(GebruikersnaamBox.Text, WachtwoordBox.Text);
+                bool l = uProxy.Login(GebruikersnaamBox.Text, WachtwoordBox.Password.ToString());
+                if (l.Equals(false))
+                {
+                    Error.Text = "Er is geen combinatie bekend van deze gebruikersnaam/wachtwoord, probeer het opnieuw!";
+                } else
+                {
+                    Project p = new Project();
+                    p.Show();
+                    this.Close();
+                }
             }
         }
     }

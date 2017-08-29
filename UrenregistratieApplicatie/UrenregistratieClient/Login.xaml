@@ -8,14 +8,15 @@
         Title="Login" Height="278.431" Width="324.019">
     <Grid Margin="0,0,2,0">
 
-        <TextBox x:Name="GebruikersnaamBox" HorizontalAlignment="Left" Height="23" Margin="140,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="WachtwoordBox" HorizontalAlignment="Left" Height="23" Margin="140,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="GebruikersnaamBox" HorizontalAlignment="Left" Height="18" Margin="140,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Label Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="98" Height="26"/>
-        <Label Content="Wachtwoord:" HorizontalAlignment="Left" Margin="24,107,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="98" Height="26"/>
+        <Label Content="Wachtwoord:" HorizontalAlignment="Left" Margin="24,99,0,0" VerticalAlignment="Top" Width="98" Height="26"/>
         <TextBlock HorizontalAlignment="Left" Margin="24,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="259" Height="16">
-            <Hyperlink NavigateUri="Reviews.xaml">Nog geen account? Registreer hier! </Hyperlink>
+            <Hyperlink Click="Hyperlink_Click">Nog geen account? Registreer hier! </Hyperlink>
         </TextBlock>
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="185,146,0,0" VerticalAlignment="Top" Width="75" Click="Login_Click"/>
+        <TextBlock x:Name="Error" HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="51"/>
+        <PasswordBox x:Name="WachtwoordBox" HorizontalAlignment="Left" Margin="140,107,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

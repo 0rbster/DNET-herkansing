@@ -12,15 +12,15 @@ namespace UrenregistratieService
     using System;
     using System.Collections.Generic;
     
-    public partial class Taak
+    public partial class TaakSet
     {
         public int TaakId { get; set; }
         public string Type { get; set; }
-        public System.TimeSpan Uren { get; set; }
+        public int Uren { get; set; }
         public int UserUserId { get; set; }
         public int ProjectProjectId { get; set; }
     
-        public virtual User User { get; set; }
-        public virtual Project Project { get; set; }
+        public virtual ProjectSet ProjectSet { get; set; }
+        public virtual UserSet UserSet { get; set; }
     }
 }

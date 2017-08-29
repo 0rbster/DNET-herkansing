@@ -13,5 +13,8 @@ namespace UrenregistratieService
     {
         [OperationContract]
         bool Login(string gebruikersnaam, string wachtwoord);
+
+        [OperationContract]
+        bool Registreer(string gebruikersnaam);
     }
 }

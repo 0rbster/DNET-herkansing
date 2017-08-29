@@ -12,21 +12,21 @@ namespace UrenregistratieService
     using System;
     using System.Collections.Generic;
     
-    public partial class Project
+    public partial class ProjectSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Project()
+        public ProjectSet()
         {
-            this.User = new HashSet<User>();
-            this.Taak = new HashSet<Taak>();
+            this.TaakSet = new HashSet<TaakSet>();
+            this.UserSet = new HashSet<UserSet>();
         }
     
         public int ProjectId { get; set; }
         public string Naam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
+        public virtual ICollection<TaakSet> TaakSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Taak> Taak { get; set; }
+        public virtual ICollection<UserSet> UserSet { get; set; }
     }
 }
