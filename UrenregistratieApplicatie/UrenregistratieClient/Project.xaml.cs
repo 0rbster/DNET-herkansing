@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UrenregistratieClient.UrenregistratieService;
 
 namespace UrenregistratieClient
 {
@@ -19,9 +20,21 @@ namespace UrenregistratieClient
     /// </summary>
     public partial class Project : Window
     {
-        public Project()
+        public string gebruiker { get; set; }
+
+        public Project(string gebruiker)
         {
             InitializeComponent();
+            using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
+            {
+                var takenlijst = uProxy.TakenOphalen(gebruiker);
+                Console.WriteLine("ik kom hier");
+                foreach (var t in takenlijst)
+                {
+                    Takenlijst.Items.Add(t);
+                }
+            }
+                
         }
     }
 }

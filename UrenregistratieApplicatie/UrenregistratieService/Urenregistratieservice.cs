@@ -10,6 +10,7 @@ namespace UrenregistratieService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Urenregistratieservice" in both code and config file together.
     public class Urenregistratieservice : IUrenregistratieservice
     {
+        //Controleert of de gebruikersnaam en wachtwoord voorkomen in de database
         public bool Login(string gebruikersnaam, string wachtwoord)
         {
             using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
@@ -25,6 +26,7 @@ namespace UrenregistratieService
             }
         }
 
+        //Slaat de nieuwe gebruiker op in de database als de opgegeven gebruikersnaam nog niet voorkomt in de database
         public bool Registreer(string gebruikersnaam)
         {
             var charArray = gebruikersnaam.ToCharArray();
@@ -61,6 +63,26 @@ namespace UrenregistratieService
                 }
             }
             return false;
+        }
+
+        //Haalt een lijst met taken op van het huidige project van de gebruiker
+        public List<string> TakenOphalen(string gebruikersnaam)
+        {
+            using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
+            {
+                UserSet gebruiker = ctx.UserSet.Single(g => g.Gebruikersnaam.Equals(gebruikersnaam));
+                int gebruikerid = gebruiker.UserId;
+                var taken = from t in ctx.TaakSet
+                            where t.UserUserId == gebruikerid
+                            select t;
+                var takenlijst = new List<string>();
+                foreach (var t in taken)
+                {
+                    takenlijst.Add(t.Type);
+                }
+
+                return takenlijst;
+            }
         }
     }
 }

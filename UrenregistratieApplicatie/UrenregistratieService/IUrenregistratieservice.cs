@@ -16,5 +16,8 @@ namespace UrenregistratieService
 
         [OperationContract]
         bool Registreer(string gebruikersnaam);
+
+        [OperationContract]
+        List<string> TakenOphalen(string gebruikersnaam);
     }
 }

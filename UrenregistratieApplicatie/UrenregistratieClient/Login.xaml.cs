@@ -46,9 +46,12 @@ namespace UrenregistratieClient
                 if (l.Equals(false))
                 {
                     Error.Text = "Er is geen combinatie bekend van deze gebruikersnaam/wachtwoord, probeer het opnieuw!";
+                    GebruikersnaamBox.Text = "";
+                    WachtwoordBox.Password = "";
                 } else
                 {
-                    Project p = new Project();
+                    Project p = new Project(GebruikersnaamBox.Text);
+                    p.gebruiker = GebruikersnaamBox.Text;
                     p.Show();
                     this.Close();
                 }

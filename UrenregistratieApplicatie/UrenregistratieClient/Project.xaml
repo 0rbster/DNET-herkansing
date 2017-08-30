@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UrenregistratieClient"
         mc:Ignorable="d"
-        Title="Project" Height="300" Width="300">
+        Title="Project" Height="252.772" Width="272.727">
     <Grid>
-        
+        <ListBox x:Name="Takenlijst" HorizontalAlignment="Left" Height="111" Margin="10,34,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Taken:" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button x:Name="UrenInboeken" Content="Uren inboeken" HorizontalAlignment="Left" Margin="157,34,0,0" VerticalAlignment="Top" Width="87"/>
+        <Button x:Name="UrenBekijken" Content="Uren bekijken" HorizontalAlignment="Left" Margin="157,69,0,0" VerticalAlignment="Top" Width="87" Height="20"/>
+
     </Grid>
 </Window>
