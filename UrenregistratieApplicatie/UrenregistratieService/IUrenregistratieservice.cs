@@ -19,5 +19,14 @@ namespace UrenregistratieService
 
         [OperationContract]
         List<string> TakenOphalen(string gebruikersnaam);
+
+        [OperationContract]
+        int GewerkteUrenOphalen(string taak, string gebruikersnaam);
+
+        [OperationContract]
+        UserSet GebruikerOphalen(string gebruikersnaam);
+
+        [OperationContract]
+        void UrenOpslaan(string taak, int uren, string gebruikersnaam);
     }
 }

@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UrenregistratieService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUrenregistratieservice_Login_InputMessage">
@@ -25,6 +26,24 @@
   <wsdl:message name="IUrenregistratieservice_TakenOphalen_OutputMessage">
     <wsdl:part name="parameters" element="tns:TakenOphalenResponse" />
   </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_GewerkteUrenOphalen_InputMessage">
+    <wsdl:part name="parameters" element="tns:GewerkteUrenOphalen" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_GewerkteUrenOphalen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GewerkteUrenOphalenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_GebruikerOphalen_InputMessage">
+    <wsdl:part name="parameters" element="tns:GebruikerOphalen" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_GebruikerOphalen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GebruikerOphalenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_UrenOpslaan_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrenOpslaan" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_UrenOpslaan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrenOpslaanResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUrenregistratieservice">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/Login" message="tns:IUrenregistratieservice_Login_InputMessage" />
@@ -37,6 +56,18 @@
     <wsdl:operation name="TakenOphalen">
       <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/TakenOphalen" message="tns:IUrenregistratieservice_TakenOphalen_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/TakenOphalenResponse" message="tns:IUrenregistratieservice_TakenOphalen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GewerkteUrenOphalen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalen" message="tns:IUrenregistratieservice_GewerkteUrenOphalen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalenResponse" message="tns:IUrenregistratieservice_GewerkteUrenOphalen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GebruikerOphalen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/GebruikerOphalen" message="tns:IUrenregistratieservice_GebruikerOphalen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/GebruikerOphalenResponse" message="tns:IUrenregistratieservice_GebruikerOphalen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrenOpslaan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaan" message="tns:IUrenregistratieservice_UrenOpslaan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaanResponse" message="tns:IUrenregistratieservice_UrenOpslaan_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUrenregistratieservice" type="tns:IUrenregistratieservice">
@@ -61,6 +92,33 @@
     </wsdl:operation>
     <wsdl:operation name="TakenOphalen">
       <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/TakenOphalen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GewerkteUrenOphalen">
+      <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GebruikerOphalen">
+      <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/GebruikerOphalen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrenOpslaan">
+      <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/UrenOpslaan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

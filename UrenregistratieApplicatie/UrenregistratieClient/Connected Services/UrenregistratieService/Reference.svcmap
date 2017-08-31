@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="1e7f72d4-45a0-44d4-aed6-196f32f492aa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd2" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="18d6608e-6004-4c5b-a351-b689824abf51" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd0" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="1e7f72d4-45a0-44d4-aed6-196f32f492aa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd2" />
+    <MetadataFile FileName="Urenregistratieservice.wsdl" MetadataType="Wsdl" ID="99ea2a09-28d9-4b5d-b38d-a902e17dc6bf" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?wsdl" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="954f36de-6178-40d9-8032-60751784f43c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?disco" />
     <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="6003fc90-ecdf-42b2-8e95-fd722e38f4ef" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd1" />
-    <MetadataFile FileName="Urenregistratieservice.wsdl" MetadataType="Wsdl" ID="99ea2a09-28d9-4b5d-b38d-a902e17dc6bf" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="a40086b8-7fc0-47f5-b5bf-daa152e9826b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/UrenregistratieService/Urenregistratieservice/?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

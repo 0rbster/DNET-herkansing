@@ -9,7 +9,368 @@
 //------------------------------------------------------------------------------
 
 namespace UrenregistratieClient.UrenregistratieService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserSet", Namespace="http://schemas.datacontract.org/2004/07/UrenregistratieService")]
+    [System.SerializableAttribute()]
+    public partial class UserSet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GebruikersnaamField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProjectProjectIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UrenregistratieClient.UrenregistratieService.ProjectSet ProjectSetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UrenregistratieClient.UrenregistratieService.TaakSet[] TaakSetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WachtwoordField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gebruikersnaam {
+            get {
+                return this.GebruikersnaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GebruikersnaamField, value) != true)) {
+                    this.GebruikersnaamField = value;
+                    this.RaisePropertyChanged("Gebruikersnaam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProjectProjectId {
+            get {
+                return this.ProjectProjectIdField;
+            }
+            set {
+                if ((this.ProjectProjectIdField.Equals(value) != true)) {
+                    this.ProjectProjectIdField = value;
+                    this.RaisePropertyChanged("ProjectProjectId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UrenregistratieClient.UrenregistratieService.ProjectSet ProjectSet {
+            get {
+                return this.ProjectSetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectSetField, value) != true)) {
+                    this.ProjectSetField = value;
+                    this.RaisePropertyChanged("ProjectSet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UrenregistratieClient.UrenregistratieService.TaakSet[] TaakSet {
+            get {
+                return this.TaakSetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TaakSetField, value) != true)) {
+                    this.TaakSetField = value;
+                    this.RaisePropertyChanged("TaakSet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Wachtwoord {
+            get {
+                return this.WachtwoordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WachtwoordField, value) != true)) {
+                    this.WachtwoordField = value;
+                    this.RaisePropertyChanged("Wachtwoord");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProjectSet", Namespace="http://schemas.datacontract.org/2004/07/UrenregistratieService")]
+    [System.SerializableAttribute()]
+    public partial class ProjectSet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NaamField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProjectIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UrenregistratieClient.UrenregistratieService.TaakSet[] TaakSetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UrenregistratieClient.UrenregistratieService.UserSet[] UserSetField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Naam {
+            get {
+                return this.NaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NaamField, value) != true)) {
+                    this.NaamField = value;
+                    this.RaisePropertyChanged("Naam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectId {
+            get {
+                return this.ProjectIdField;
+            }
+            set {
+                if ((this.ProjectIdField.Equals(value) != true)) {
+                    this.ProjectIdField = value;
+                    this.RaisePropertyChanged("ProjectId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UrenregistratieClient.UrenregistratieService.TaakSet[] TaakSet {
+            get {
+                return this.TaakSetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TaakSetField, value) != true)) {
+                    this.TaakSetField = value;
+                    this.RaisePropertyChanged("TaakSet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UrenregistratieClient.UrenregistratieService.UserSet[] UserSet {
+            get {
+                return this.UserSetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserSetField, value) != true)) {
+                    this.UserSetField = value;
+                    this.RaisePropertyChanged("UserSet");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TaakSet", Namespace="http://schemas.datacontract.org/2004/07/UrenregistratieService")]
+    [System.SerializableAttribute()]
+    public partial class TaakSet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProjectProjectIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UrenregistratieClient.UrenregistratieService.ProjectSet ProjectSetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TaakIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UrenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UrenregistratieClient.UrenregistratieService.UserSet UserSetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserUserIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectProjectId {
+            get {
+                return this.ProjectProjectIdField;
+            }
+            set {
+                if ((this.ProjectProjectIdField.Equals(value) != true)) {
+                    this.ProjectProjectIdField = value;
+                    this.RaisePropertyChanged("ProjectProjectId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UrenregistratieClient.UrenregistratieService.ProjectSet ProjectSet {
+            get {
+                return this.ProjectSetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectSetField, value) != true)) {
+                    this.ProjectSetField = value;
+                    this.RaisePropertyChanged("ProjectSet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TaakId {
+            get {
+                return this.TaakIdField;
+            }
+            set {
+                if ((this.TaakIdField.Equals(value) != true)) {
+                    this.TaakIdField = value;
+                    this.RaisePropertyChanged("TaakId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Uren {
+            get {
+                return this.UrenField;
+            }
+            set {
+                if ((this.UrenField.Equals(value) != true)) {
+                    this.UrenField = value;
+                    this.RaisePropertyChanged("Uren");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UrenregistratieClient.UrenregistratieService.UserSet UserSet {
+            get {
+                return this.UserSetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserSetField, value) != true)) {
+                    this.UserSetField = value;
+                    this.RaisePropertyChanged("UserSet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserUserId {
+            get {
+                return this.UserUserIdField;
+            }
+            set {
+                if ((this.UserUserIdField.Equals(value) != true)) {
+                    this.UserUserIdField = value;
+                    this.RaisePropertyChanged("UserUserId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UrenregistratieService.IUrenregistratieservice")]
@@ -32,6 +393,24 @@ namespace UrenregistratieClient.UrenregistratieService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TakenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TakenOphalenResponse")]
         System.Threading.Tasks.Task<string[]> TakenOphalenAsync(string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalenResponse")]
+        int GewerkteUrenOphalen(string taak, string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalenResponse")]
+        System.Threading.Tasks.Task<int> GewerkteUrenOphalenAsync(string taak, string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GebruikerOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GebruikerOphalenResponse")]
+        UrenregistratieClient.UrenregistratieService.UserSet GebruikerOphalen(string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GebruikerOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GebruikerOphalenResponse")]
+        System.Threading.Tasks.Task<UrenregistratieClient.UrenregistratieService.UserSet> GebruikerOphalenAsync(string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaan", ReplyAction="http://tempuri.org/IUrenregistratieservice/UrenOpslaanResponse")]
+        void UrenOpslaan(string taak, int uren, string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaan", ReplyAction="http://tempuri.org/IUrenregistratieservice/UrenOpslaanResponse")]
+        System.Threading.Tasks.Task UrenOpslaanAsync(string taak, int uren, string gebruikersnaam);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +462,30 @@ namespace UrenregistratieClient.UrenregistratieService {
         
         public System.Threading.Tasks.Task<string[]> TakenOphalenAsync(string gebruikersnaam) {
             return base.Channel.TakenOphalenAsync(gebruikersnaam);
+        }
+        
+        public int GewerkteUrenOphalen(string taak, string gebruikersnaam) {
+            return base.Channel.GewerkteUrenOphalen(taak, gebruikersnaam);
+        }
+        
+        public System.Threading.Tasks.Task<int> GewerkteUrenOphalenAsync(string taak, string gebruikersnaam) {
+            return base.Channel.GewerkteUrenOphalenAsync(taak, gebruikersnaam);
+        }
+        
+        public UrenregistratieClient.UrenregistratieService.UserSet GebruikerOphalen(string gebruikersnaam) {
+            return base.Channel.GebruikerOphalen(gebruikersnaam);
+        }
+        
+        public System.Threading.Tasks.Task<UrenregistratieClient.UrenregistratieService.UserSet> GebruikerOphalenAsync(string gebruikersnaam) {
+            return base.Channel.GebruikerOphalenAsync(gebruikersnaam);
+        }
+        
+        public void UrenOpslaan(string taak, int uren, string gebruikersnaam) {
+            base.Channel.UrenOpslaan(taak, uren, gebruikersnaam);
+        }
+        
+        public System.Threading.Tasks.Task UrenOpslaanAsync(string taak, int uren, string gebruikersnaam) {
+            return base.Channel.UrenOpslaanAsync(taak, uren, gebruikersnaam);
         }
     }
 }

@@ -51,7 +51,6 @@ namespace UrenregistratieClient
                 } else
                 {
                     Project p = new Project(GebruikersnaamBox.Text);
-                    p.gebruiker = GebruikersnaamBox.Text;
                     p.Show();
                     this.Close();
                 }

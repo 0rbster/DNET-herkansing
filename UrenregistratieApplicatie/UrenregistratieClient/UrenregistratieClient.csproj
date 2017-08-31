@@ -64,6 +64,12 @@
     <Compile Include="Registreren.xaml.cs">
       <DependentUpon>Registreren.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Urenlijst.xaml.cs">
+      <DependentUpon>Urenlijst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UrenToekennen.xaml.cs">
+      <DependentUpon>UrenToekennen.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +87,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Registreren.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Urenlijst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UrenToekennen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +128,12 @@
     </None>
     <None Include="Connected Services\UrenregistratieService\item2.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrenregistratieService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrenregistratieService\UrenregistratieClient.UrenregistratieService.UserSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UrenregistratieService\Urenregistratieservice.wsdl" />
     <None Include="Properties\Settings.settings">

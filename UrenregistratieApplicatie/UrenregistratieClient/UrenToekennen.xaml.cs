@@ -16,35 +16,39 @@ using UrenregistratieClient.UrenregistratieService;
 namespace UrenregistratieClient
 {
     /// <summary>
-    /// Interaction logic for Project.xaml
+    /// Interaction logic for UrenToekennen.xaml
     /// </summary>
-    public partial class Project : Window
+    public partial class UrenToekennen : Window
     {
-        public string huidigeGebruiker { get; set; }
+        private string task { get; set; }
+        private string huidigeGebruiker { get; set; }
 
-        public Project(string gebruikersnaam)
+        public UrenToekennen(string taak, string gebruikersnaam)
         {
             InitializeComponent();
+            task = taak;
             huidigeGebruiker = gebruikersnaam;
+            TaakBox.Text = task;
             using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
             {
-                var takenlijst = uProxy.TakenOphalen(huidigeGebruiker);
-                foreach (var t in takenlijst)
-                {
-                    Takenlijst.Items.Add(t);
-                }
+                GewerkteUren.Text = uProxy.GewerkteUrenOphalen(task, huidigeGebruiker).ToString();
             }
-                
+                 
         }
 
-        private void Takenlijst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Opslaan_Click(object sender, RoutedEventArgs e)
         {
-            UrenToekennen ut = new UrenToekennen(Takenlijst.SelectedItem.ToString(), huidigeGebruiker);
-            ut.Show();
             using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
             {
-               
+
+                uProxy.UrenOpslaan(task, Convert.ToInt32(GewerkteUren.Text), huidigeGebruiker);
+                this.Close();
             }
+        }
+
+        private void Annuleren_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
