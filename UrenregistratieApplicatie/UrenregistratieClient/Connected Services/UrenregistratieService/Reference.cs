@@ -389,16 +389,16 @@ namespace UrenregistratieClient.UrenregistratieService {
         System.Threading.Tasks.Task<bool> RegistreerAsync(string gebruikersnaam);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TakenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TakenOphalenResponse")]
-        string[] TakenOphalen(string gebruikersnaam);
+        string[] TakenOphalen(string gebruikersnaam, string wachtwoord);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TakenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TakenOphalenResponse")]
-        System.Threading.Tasks.Task<string[]> TakenOphalenAsync(string gebruikersnaam);
+        System.Threading.Tasks.Task<string[]> TakenOphalenAsync(string gebruikersnaam, string wachtwoord);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalenResponse")]
-        int GewerkteUrenOphalen(string taak, string gebruikersnaam);
+        int GewerkteUrenOphalen(string taak, string gebruikersnaam, string wachtwoord);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GewerkteUrenOphalenResponse")]
-        System.Threading.Tasks.Task<int> GewerkteUrenOphalenAsync(string taak, string gebruikersnaam);
+        System.Threading.Tasks.Task<int> GewerkteUrenOphalenAsync(string taak, string gebruikersnaam, string wachtwoord);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/GebruikerOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/GebruikerOphalenResponse")]
         UrenregistratieClient.UrenregistratieService.UserSet GebruikerOphalen(string gebruikersnaam);
@@ -407,10 +407,22 @@ namespace UrenregistratieClient.UrenregistratieService {
         System.Threading.Tasks.Task<UrenregistratieClient.UrenregistratieService.UserSet> GebruikerOphalenAsync(string gebruikersnaam);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaan", ReplyAction="http://tempuri.org/IUrenregistratieservice/UrenOpslaanResponse")]
-        void UrenOpslaan(string taak, int uren, string gebruikersnaam);
+        bool UrenOpslaan(string taak, int uren, string gebruikersnaam, string wachtwoord);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaan", ReplyAction="http://tempuri.org/IUrenregistratieservice/UrenOpslaanResponse")]
-        System.Threading.Tasks.Task UrenOpslaanAsync(string taak, int uren, string gebruikersnaam);
+        System.Threading.Tasks.Task<bool> UrenOpslaanAsync(string taak, int uren, string gebruikersnaam, string wachtwoord);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TaakVerwijderen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TaakVerwijderenResponse")]
+        bool TaakVerwijderen(string taak, string gebruikersnaam, string wachtwoord);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TaakVerwijderen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TaakVerwijderenResponse")]
+        System.Threading.Tasks.Task<bool> TaakVerwijderenAsync(string taak, string gebruikersnaam, string wachtwoord);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TaakOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TaakOphalenResponse")]
+        UrenregistratieClient.UrenregistratieService.TaakSet TaakOphalen(string taak, string gebruikersnaam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUrenregistratieservice/TaakOphalen", ReplyAction="http://tempuri.org/IUrenregistratieservice/TaakOphalenResponse")]
+        System.Threading.Tasks.Task<UrenregistratieClient.UrenregistratieService.TaakSet> TaakOphalenAsync(string taak, string gebruikersnaam);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -456,20 +468,20 @@ namespace UrenregistratieClient.UrenregistratieService {
             return base.Channel.RegistreerAsync(gebruikersnaam);
         }
         
-        public string[] TakenOphalen(string gebruikersnaam) {
-            return base.Channel.TakenOphalen(gebruikersnaam);
+        public string[] TakenOphalen(string gebruikersnaam, string wachtwoord) {
+            return base.Channel.TakenOphalen(gebruikersnaam, wachtwoord);
         }
         
-        public System.Threading.Tasks.Task<string[]> TakenOphalenAsync(string gebruikersnaam) {
-            return base.Channel.TakenOphalenAsync(gebruikersnaam);
+        public System.Threading.Tasks.Task<string[]> TakenOphalenAsync(string gebruikersnaam, string wachtwoord) {
+            return base.Channel.TakenOphalenAsync(gebruikersnaam, wachtwoord);
         }
         
-        public int GewerkteUrenOphalen(string taak, string gebruikersnaam) {
-            return base.Channel.GewerkteUrenOphalen(taak, gebruikersnaam);
+        public int GewerkteUrenOphalen(string taak, string gebruikersnaam, string wachtwoord) {
+            return base.Channel.GewerkteUrenOphalen(taak, gebruikersnaam, wachtwoord);
         }
         
-        public System.Threading.Tasks.Task<int> GewerkteUrenOphalenAsync(string taak, string gebruikersnaam) {
-            return base.Channel.GewerkteUrenOphalenAsync(taak, gebruikersnaam);
+        public System.Threading.Tasks.Task<int> GewerkteUrenOphalenAsync(string taak, string gebruikersnaam, string wachtwoord) {
+            return base.Channel.GewerkteUrenOphalenAsync(taak, gebruikersnaam, wachtwoord);
         }
         
         public UrenregistratieClient.UrenregistratieService.UserSet GebruikerOphalen(string gebruikersnaam) {
@@ -480,12 +492,28 @@ namespace UrenregistratieClient.UrenregistratieService {
             return base.Channel.GebruikerOphalenAsync(gebruikersnaam);
         }
         
-        public void UrenOpslaan(string taak, int uren, string gebruikersnaam) {
-            base.Channel.UrenOpslaan(taak, uren, gebruikersnaam);
+        public bool UrenOpslaan(string taak, int uren, string gebruikersnaam, string wachtwoord) {
+            return base.Channel.UrenOpslaan(taak, uren, gebruikersnaam, wachtwoord);
         }
         
-        public System.Threading.Tasks.Task UrenOpslaanAsync(string taak, int uren, string gebruikersnaam) {
-            return base.Channel.UrenOpslaanAsync(taak, uren, gebruikersnaam);
+        public System.Threading.Tasks.Task<bool> UrenOpslaanAsync(string taak, int uren, string gebruikersnaam, string wachtwoord) {
+            return base.Channel.UrenOpslaanAsync(taak, uren, gebruikersnaam, wachtwoord);
+        }
+        
+        public bool TaakVerwijderen(string taak, string gebruikersnaam, string wachtwoord) {
+            return base.Channel.TaakVerwijderen(taak, gebruikersnaam, wachtwoord);
+        }
+        
+        public System.Threading.Tasks.Task<bool> TaakVerwijderenAsync(string taak, string gebruikersnaam, string wachtwoord) {
+            return base.Channel.TaakVerwijderenAsync(taak, gebruikersnaam, wachtwoord);
+        }
+        
+        public UrenregistratieClient.UrenregistratieService.TaakSet TaakOphalen(string taak, string gebruikersnaam) {
+            return base.Channel.TaakOphalen(taak, gebruikersnaam);
+        }
+        
+        public System.Threading.Tasks.Task<UrenregistratieClient.UrenregistratieService.TaakSet> TaakOphalenAsync(string taak, string gebruikersnaam) {
+            return base.Channel.TaakOphalenAsync(taak, gebruikersnaam);
         }
     }
 }

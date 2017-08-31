@@ -47,5 +47,12 @@ namespace UrenregistratieClient
                 }
             }
         }
+
+        private void Annuleren_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow l = new MainWindow();
+            l.Show();
+            this.Close();
+        }
     }
 }

@@ -18,15 +18,21 @@ namespace UrenregistratieService
         bool Registreer(string gebruikersnaam);
 
         [OperationContract]
-        List<string> TakenOphalen(string gebruikersnaam);
+        List<string> TakenOphalen(string gebruikersnaam, string wachtwoord);
 
         [OperationContract]
-        int GewerkteUrenOphalen(string taak, string gebruikersnaam);
+        int GewerkteUrenOphalen(string taak, string gebruikersnaam, string wachtwoord);
 
         [OperationContract]
         UserSet GebruikerOphalen(string gebruikersnaam);
 
         [OperationContract]
-        void UrenOpslaan(string taak, int uren, string gebruikersnaam);
+        bool UrenOpslaan(string taak, int uren, string gebruikersnaam, string wachtwoord);
+
+        [OperationContract]
+        bool TaakVerwijderen(string taak, string gebruikersnaam, string wachtwoord);
+
+        [OperationContract]
+        TaakSet TaakOphalen(string taak, string gebruikersnaam);
     }
 }

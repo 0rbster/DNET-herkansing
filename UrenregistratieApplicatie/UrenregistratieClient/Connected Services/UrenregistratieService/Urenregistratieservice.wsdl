@@ -44,6 +44,18 @@
   <wsdl:message name="IUrenregistratieservice_UrenOpslaan_OutputMessage">
     <wsdl:part name="parameters" element="tns:UrenOpslaanResponse" />
   </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_TaakVerwijderen_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaakVerwijderen" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_TaakVerwijderen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaakVerwijderenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_TaakOphalen_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaakOphalen" />
+  </wsdl:message>
+  <wsdl:message name="IUrenregistratieservice_TaakOphalen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaakOphalenResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUrenregistratieservice">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/Login" message="tns:IUrenregistratieservice_Login_InputMessage" />
@@ -68,6 +80,14 @@
     <wsdl:operation name="UrenOpslaan">
       <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaan" message="tns:IUrenregistratieservice_UrenOpslaan_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/UrenOpslaanResponse" message="tns:IUrenregistratieservice_UrenOpslaan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaakVerwijderen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/TaakVerwijderen" message="tns:IUrenregistratieservice_TaakVerwijderen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/TaakVerwijderenResponse" message="tns:IUrenregistratieservice_TaakVerwijderen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaakOphalen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUrenregistratieservice/TaakOphalen" message="tns:IUrenregistratieservice_TaakOphalen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUrenregistratieservice/TaakOphalenResponse" message="tns:IUrenregistratieservice_TaakOphalen_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUrenregistratieservice" type="tns:IUrenregistratieservice">
@@ -119,6 +139,24 @@
     </wsdl:operation>
     <wsdl:operation name="UrenOpslaan">
       <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/UrenOpslaan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaakVerwijderen">
+      <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/TaakVerwijderen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaakOphalen">
+      <soap:operation soapAction="http://tempuri.org/IUrenregistratieservice/TaakOphalen" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -50,7 +50,7 @@ namespace UrenregistratieClient
                     WachtwoordBox.Password = "";
                 } else
                 {
-                    Project p = new Project(GebruikersnaamBox.Text);
+                    Project p = new Project(GebruikersnaamBox.Text, WachtwoordBox.Password.ToString());
                     p.Show();
                     this.Close();
                 }

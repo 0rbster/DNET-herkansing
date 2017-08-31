@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UrenregistratieClient"
         mc:Ignorable="d"
-        Title="Login" Height="278.431" Width="324.019">
+        WindowStartupLocation="CenterScreen"
+        Title="Login" Height="293.657" Width="491.282">
     <Grid Margin="0,0,2,0">
 
-        <TextBox x:Name="GebruikersnaamBox" HorizontalAlignment="Left" Height="18" Margin="140,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <Label Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="98" Height="26"/>
-        <Label Content="Wachtwoord:" HorizontalAlignment="Left" Margin="24,99,0,0" VerticalAlignment="Top" Width="98" Height="26"/>
-        <TextBlock HorizontalAlignment="Left" Margin="24,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="259" Height="16">
+        <TextBox x:Name="GebruikersnaamBox" HorizontalAlignment="Left" Height="18" Margin="232,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="116,86,0,0" VerticalAlignment="Top" Width="98" Height="26"/>
+        <Label Content="Wachtwoord:" HorizontalAlignment="Left" Margin="116,119,0,0" VerticalAlignment="Top" Width="98" Height="26"/>
+        <TextBlock HorizontalAlignment="Left" Margin="116,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259" Height="16">
             <Hyperlink Click="Hyperlink_Click">Nog geen account? Registreer hier! </Hyperlink>
         </TextBlock>
-        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="185,146,0,0" VerticalAlignment="Top" Width="75" Click="Login_Click"/>
-        <TextBlock x:Name="Error" HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="51"/>
-        <PasswordBox x:Name="WachtwoordBox" HorizontalAlignment="Left" Margin="140,107,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="277,166,0,0" VerticalAlignment="Top" Width="75" Click="Login_Click"/>
+        <TextBlock x:Name="Error" HorizontalAlignment="Left" Margin="116,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="51"/>
+        <PasswordBox x:Name="WachtwoordBox" HorizontalAlignment="Left" Margin="232,127,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

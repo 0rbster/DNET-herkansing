@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UrenregistratieClient"
         mc:Ignorable="d"
-        Title="UrenToekennen" Height="174.803" Width="300">
+        WindowStartupLocation="CenterScreen"
+        Title="UrenToekennen" Height="293.657" Width="491.282">
     <Grid>
-        <Label Content="Taak:" HorizontalAlignment="Left" Margin="84,36,0,0" VerticalAlignment="Top" Width="37"/>
-        <TextBlock x:Name="TaakBox" HorizontalAlignment="Left" Margin="146,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Height="26"/>
-        <Label Content="Gewerkte uren:" HorizontalAlignment="Left" Margin="31,67,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="GewerkteUren" HorizontalAlignment="Left" Height="23" Margin="146,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.832,0.635"/>
-        <Button x:Name="Opslaan" Content="Opslaan" HorizontalAlignment="Left" Margin="207,114,0,0" VerticalAlignment="Top" Width="75" Click="Opslaan_Click"/>
-        <Button x:Name="Annuleren" Content="Annuleren" HorizontalAlignment="Left" Margin="127,114,0,0" VerticalAlignment="Top" Width="75" Click="Annuleren_Click"/>
+        <Label Content="Taak:" HorizontalAlignment="Left" Margin="173,84,0,0" VerticalAlignment="Top" Width="37"/>
+        <TextBlock x:Name="TaakBox" HorizontalAlignment="Left" Margin="235,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Height="26"/>
+        <Label Content="Gewerkte uren:" HorizontalAlignment="Left" Margin="120,115,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="GewerkteUren" HorizontalAlignment="Left" Height="23" Margin="235,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.832,0.635"/>
+        <Button x:Name="Opslaan" Content="Opslaan" HorizontalAlignment="Left" Margin="215,167,0,0" VerticalAlignment="Top" Width="75" Click="Opslaan_Click"/>
+        <Button x:Name="Annuleren" Content="Annuleren" HorizontalAlignment="Left" Margin="135,167,0,0" VerticalAlignment="Top" Width="75" Click="Annuleren_Click"/>
+        <Button x:Name="Verwijderen" Content="Verwijderen" HorizontalAlignment="Left" Margin="295,167,0,0" VerticalAlignment="Top" Width="75" Click="Verwijderen_Click"/>
+        <TextBlock x:Name="MessageBox" HorizontalAlignment="Left" Margin="173,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
 
     </Grid>
 </Window>

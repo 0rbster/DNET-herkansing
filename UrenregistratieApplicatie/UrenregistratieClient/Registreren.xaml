@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UrenregistratieClient"
         mc:Ignorable="d"
-        Title="Registreren" Height="182.352" Width="300">
+        WindowStartupLocation="CenterScreen"
+        Title="Registreren" Height="293.657" Width="491.282">
     <Grid>
-        <Label Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Registreer" Content="Registreer" HorizontalAlignment="Left" Margin="170,92,0,0" VerticalAlignment="Top" Width="75" Click="Registreer_Click"/>
-        <TextBox x:Name="Gebruikersnaambox" HorizontalAlignment="Left" Height="23" Margin="125,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="MessageBlock" HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="31"/>
+        <Label Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="111,113,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Registreer" Content="Registreer" HorizontalAlignment="Left" Margin="271,162,0,0" VerticalAlignment="Top" Width="75" Click="Registreer_Click"/>
+        <TextBox x:Name="Gebruikersnaambox" HorizontalAlignment="Left" Height="23" Margin="226,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="MessageBlock" HorizontalAlignment="Left" Margin="111,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="31"/>
+        <Button x:Name="Annuleren" Content="Annuleren" HorizontalAlignment="Left" Margin="191,162,0,0" VerticalAlignment="Top" Width="75" Click="Annuleren_Click"/>
 
     </Grid>
 </Window>

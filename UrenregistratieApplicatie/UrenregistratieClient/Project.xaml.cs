@@ -21,30 +21,43 @@ namespace UrenregistratieClient
     public partial class Project : Window
     {
         public string huidigeGebruiker { get; set; }
+        public string huidigeWachtwoord { get; }
 
-        public Project(string gebruikersnaam)
+        public Project(string gebruikersnaam, string wachtwoord)
         {
             InitializeComponent();
             huidigeGebruiker = gebruikersnaam;
+            huidigeWachtwoord = wachtwoord;
             using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
             {
-                var takenlijst = uProxy.TakenOphalen(huidigeGebruiker);
+                var takenlijst = uProxy.TakenOphalen(huidigeGebruiker, huidigeWachtwoord);
                 foreach (var t in takenlijst)
                 {
-                    Takenlijst.Items.Add(t);
+                    TakenLijst.Items.Add(t.Split('|')[0]);
+                    UrenLijst.Items.Add(t.Substring(t.LastIndexOf('|') + 1));
                 }
             }
                 
         }
 
-        private void Takenlijst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Aanpassen_Click(object sender, RoutedEventArgs e)
         {
-            UrenToekennen ut = new UrenToekennen(Takenlijst.SelectedItem.ToString(), huidigeGebruiker);
-            ut.Show();
-            using (UrenregistratieserviceClient uProxy = new UrenregistratieserviceClient())
+            if (TakenLijst.SelectedItem == null)
             {
-               
+                MessageBox.Text = "Selecteer een taak om aan te passen";
+            } else
+            {
+                UrenToekennen ut = new UrenToekennen(TakenLijst.SelectedItem.ToString(), huidigeGebruiker, huidigeWachtwoord);
+                ut.Show();
+                this.Close();
             }
+        }
+
+        private void Uitloggen_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow l = new MainWindow();
+            l.Show();
+            this.Close();
         }
     }
 }

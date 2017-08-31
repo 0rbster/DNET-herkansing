@@ -66,8 +66,9 @@ namespace UrenregistratieService
         }
 
         //Haalt een lijst met taken op van het huidige project van de gebruiker
-        public List<string> TakenOphalen(string gebruikersnaam)
+        public List<string> TakenOphalen(string gebruikersnaam, string wachtwoord)
         {
+            if (!Login(gebruikersnaam, wachtwoord)) { return null; } 
             using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
             {
                 UserSet gebruiker = GebruikerOphalen(gebruikersnaam);
@@ -78,21 +79,19 @@ namespace UrenregistratieService
                 var takenlijst = new List<string>();
                 foreach (var t in taken)
                 {
-                    takenlijst.Add(t.Type);
+                    takenlijst.Add(t.Type + "|" + t.Uren);
                 }
-
                 return takenlijst;
             }
         }
 
         // haalt de gewerkte uren op van 1 taak van de gebruiker z'n huidige project
-        public int GewerkteUrenOphalen(string taak, string gebruikersnaam)
+        public int GewerkteUrenOphalen(string taak, string gebruikersnaam, string wachtwoord)
         {
+            if (!Login(gebruikersnaam, wachtwoord)) return 000;
             using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
             {
-                UserSet gebruiker = GebruikerOphalen(gebruikersnaam);
-                int projectID = Convert.ToInt32(gebruiker.ProjectProjectId);
-                TaakSet task = ctx.TaakSet.SingleOrDefault(t => t.Type.Equals(taak) && t.UserUserId.Equals(gebruiker.UserId) && t.ProjectProjectId.Equals(projectID));
+                TaakSet task = TaakOphalen(taak, gebruikersnaam);
                 return task.Uren;
                 
             }
@@ -103,22 +102,51 @@ namespace UrenregistratieService
         {
             using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
             {
-                UserSet gebruiker = ctx.UserSet.Single(g => g.Gebruikersnaam.Equals(gebruikersnaam));
+                UserSet gebruiker = ctx.UserSet.Single(g => g.Gebruikersnaam.Equals(gebruikersnaam)); 
                 return gebruiker;
             }
         }
         
         // slaat het aantal gewerkte uren op in de TaakSet tabel
-        public void UrenOpslaan(string taak, int uren, string gebruikersnaam)
+        public bool UrenOpslaan(string taak, int uren, string gebruikersnaam, string wachtwoord)
+        {
+            if (!Login(gebruikersnaam, wachtwoord)) { return false; }
+            using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
+            {
+                TaakSet task = TaakOphalen(taak, gebruikersnaam);
+                TaakSet taskID = ctx.TaakSet.SingleOrDefault(t => t.TaakId == task.TaakId);
+                taskID.Uren = uren;
+                ctx.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool TaakVerwijderen(string taak, string gebruikersnaam, string wachtwoord)
+        {
+            if (!Login(gebruikersnaam, wachtwoord)) return false;
+            using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
+            {
+                TaakSet task = TaakOphalen(taak, gebruikersnaam);
+                TaakSet taskID = ctx.TaakSet.SingleOrDefault(t => t.TaakId == task.TaakId);
+                if (taskID != null)
+                {
+                    ctx.TaakSet.Remove(taskID);
+                    ctx.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public TaakSet TaakOphalen(string taak, string gebruikersnaam)
         {
             using (UrenregistratieDBEntities ctx = new UrenregistratieDBEntities())
             {
                 UserSet gebruiker = GebruikerOphalen(gebruikersnaam);
                 int projectID = Convert.ToInt32(gebruiker.ProjectProjectId);
                 TaakSet task = ctx.TaakSet.SingleOrDefault(t => t.Type.Equals(taak) && t.UserUserId.Equals(gebruiker.UserId) && t.ProjectProjectId.Equals(projectID));
-                task.Uren = uren;
-                ctx.SaveChanges();
-            }
+                return task;
+            }    
         }
     }
 }

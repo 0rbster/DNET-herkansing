@@ -5,12 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UrenregistratieClient"
         mc:Ignorable="d"
-        Title="Project" Height="296.772" Width="341.727">
-    <Grid>
-        <ListBox x:Name="Takenlijst" HorizontalAlignment="Left" Height="111" Margin="10,34,0,0" VerticalAlignment="Top" Width="123" MouseDoubleClick="Takenlijst_MouseDoubleClick"/>
-        <Label Content="Taken:" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button x:Name="UrenLijst" Content="Urenlijst" HorizontalAlignment="Left" Margin="168,34,0,0" VerticalAlignment="Top" Width="87" Height="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,166,0,0" TextWrapping="Wrap" Text="- Klik tweemaal op een taak om uw gewerkte uren in te vullen" VerticalAlignment="Top" Width="245" Height="46"/>
+        WindowStartupLocation="CenterScreen"
+        Title="Project" Height="293.657" Width="491.282">
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
 
+        <ListBox x:Name="TakenLijst" HorizontalAlignment="Left" Height="131" VerticalAlignment="Top" Width="205" Margin="10,50,0,0"/>
+        <ListBox x:Name="UrenLijst" HorizontalAlignment="Left" Height="131" VerticalAlignment="Top" Width="59" Margin="215,50,0,0">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <Label Content="Taak:" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Content="Uren:" HorizontalAlignment="Left" Margin="215,24,0,0" VerticalAlignment="Top" Width="59"/>
+        <Button x:Name="Aanpassen" Content="Aanpassen" HorizontalAlignment="Left" Margin="308,50,0,0" VerticalAlignment="Top" Width="75" Click="Aanpassen_Click"/>
+        <Button x:Name="Uitloggen" Content="Uitloggen" HorizontalAlignment="Left" Margin="308,84,0,0" VerticalAlignment="Top" Width="75" Click="Uitloggen_Click"/>
+        <TextBlock x:Name="MessageBox" HorizontalAlignment="Left" Margin="10,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="55"/>
     </Grid>
 </Window>
